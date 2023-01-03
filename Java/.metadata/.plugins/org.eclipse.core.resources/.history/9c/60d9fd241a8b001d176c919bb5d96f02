@@ -1,0 +1,28 @@
+class MyInteger
+{
+	int value;
+}
+public class Main {
+
+	static void swap(MyInteger i, MyInteger j)
+	{
+		MyInteger temp=i;
+		i=j;
+		j=temp;
+	}
+
+	public static void main(String[] args) {
+		int i=20;
+		Integer x=new Integer(i);	//upto jdk 1.4
+		Integer y=i;				//from jdk 1.5 onwards, auto boxing
+		
+		MyInteger a=new MyInteger();
+		a.value=20;
+		MyInteger b=new MyInteger();
+		b.value=30;
+
+		swap(a,b);
+		System.out.printf("a=%d and b=%d",a,b);
+	}
+
+}

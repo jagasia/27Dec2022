@@ -1,0 +1,12 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		int i=20;
+		Integer x=new Integer(i);	//upto jdk 1.4
+		Integer y=i;				//from jdk 1.5 onwards, auto boxing
+		
+
+	}
+
+}

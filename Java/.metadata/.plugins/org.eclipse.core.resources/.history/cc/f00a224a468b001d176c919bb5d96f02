@@ -1,0 +1,14 @@
+
+public class StringBuilderDemo {
+
+	public static void main(String[] args) {
+		StringBuilder sb=new StringBuilder();
+		sb.append("This");
+		sb.append(" ");
+		sb.append("a text");
+		System.out.println(sb.toString());
+		
+		sb.insert(8, "also ");
+	}
+
+}

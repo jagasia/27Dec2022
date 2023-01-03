@@ -1,0 +1,9 @@
+
+public class FloatDemo {
+
+	public static void main(String[] args) {
+		Float f=2.4f;
+		System.out.println(f.intValue());
+	}
+
+}

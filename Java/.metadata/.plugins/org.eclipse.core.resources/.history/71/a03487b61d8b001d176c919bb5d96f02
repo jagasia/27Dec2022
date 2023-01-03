@@ -1,0 +1,17 @@
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		Student s=new Student();
+		JavaStudent js=new JavaStudent();
+		js=(JavaStudent) s;		//narrowing needs explicit casting
+		
+		s=js;		//implicit casting	widening
+		Object o=new Object();
+		
+		o=js;
+		o=s;
+		
+	}
+
+}

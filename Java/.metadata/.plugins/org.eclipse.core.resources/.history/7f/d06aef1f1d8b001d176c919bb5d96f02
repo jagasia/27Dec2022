@@ -1,0 +1,14 @@
+
+public class CastingDemo {
+
+	public static void main(String[] args) {
+		int i=20;
+		float f=i;		//implicit casting
+		System.out.println(f);
+		
+		//but the vice versa, we lose something
+		i=(int) f;		//explicit casting
+		System.out.println(i);
+	}
+
+}

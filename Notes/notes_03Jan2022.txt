@@ -1,0 +1,901 @@
+Topics learned so far;
+Access specifier
+Constructors
+Overloading
+static
+this
+final
+enum
+---------------------------
+we continue from:
+Exploring Java Basics
+o	The Object Class 
+o	 Wrapper Classes 
+o	 Type casting 
+o	Using Scanner Class                               
+o	 String Handling 
+o	Date and Time API 
+o	 Best Practices
+
+
+---------------------------------------
+Object class
+--------------------
+	Object is the super class for any class we create.
+	If a class already have a super class, then that super class is derived from Object
+
+
+class Student 		//extends Object
+{
+}
+
+class JavaStudent extends Student
+{
+}
+
+Object class defines the basics of objects
+	equals
+	hashCode
+	toString
+
+lot of methods are defined in Object class
+so by default, any class we create have these methods. We can override them if required.
+
+
+public class Student {
+
+	@Override
+	public boolean equals(Object arg0) {
+		// TODO Auto-generated method stub
+		return super.equals(arg0);
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
+	
+}
+
+
+-----------------------
+Wrapper class
+-----------------------
+Integer
+Double
+Float
+Character
+Byte
+Short
+Long
+Boolean
+
+corresponding to 8 primitive data types, we have
+8 wrapper classes
+
+Integer type
+int data type
+
+Wrapper means, boxing	to cover variables and methods
+
+any class wraps the fields, methods, constructors, initializers
+
+Any operation related to the primitives
+ex:
+	int
+		what operations we need to do related to int?
+		conversion of a String into int
+
+		int result=Integer.parseInt("20");
+
+	int is a value type, that do not have any methods inside
+
+	int i=20;
+	
+Integer
+Character
+
+
+jdk 1.5 onwards,
+	this boxing and unboxing is implicit	(automatic)
+
+Boxing
+----------
+	conversion of primitive to wrapper 
+
+int i=20;	//value type
+how can we convert this into reference type?
+
+Integer x=20;	//we got error until jdk 1.4
+
+void swap(Integer i, Integer j)
+{
+	Integer temp=i;
+	i=j;
+	j=temp;
+}
+
+
+
+auto unboxing
+
+Float
+	intValue
+
+
+byte
+	what is the range of byte data type?
+		System.out.println(Byte.MAX_VALUE);
+		System.out.println(Byte.MIN_VALUE);
+
+
+Task:
+---------
+Identify the methods of wrapper classes
+
+Integer
+Double
+Float
+Character
+Byte
+Short
+Long
+Boolean
+
+put some of the useful methods in chat window
+
+-----------------------------------
+Type casting
+--------------------
+casting is possible between same family of types
+
+numeric types
+int
+float
+
+what is casting?
+what is implicit casting?
+	int i=20;
+	float f=i;
+what is explicit casting?
+	i=(int)f;		
+
+
+class Student
+{
+}
+
+class JavaStudent extends Student
+{
+}
+
+
+
+byte is narrow than int
+
+int is narrow than long
+
+byte< short< int< long
+
+byte =int		explicit casting
+
+byte b=20;		//we should have got error, because, 20 is int. But we did not get error, because of implicit casting
+
+
+
+-----------------------------
+Scanner
+-------------
+upto 1.4 version of java, there was no Scanner class
+how did we get input from user?
+	BufferedReader	for getting string inputs
+	BufferedInputStream	for binary inputs
+
+now from 1.5 onwards,
+	we use Scanner class
+
+
+Task:
+write a program to get the following inputs from the user:
+use scanner class to get inputs
+
+int id;
+String name;	//firstname <<space>> lastname		ex:	Ram Kumar	use nextLine()
+float marks;
+
+get these inputs from the user and display the same.
+
+
+next()
+nextInt()
+nextFloat()
+	all these next methods use any delimiter
+		space, tab, new line
+
+nextLine()
+	uses "nextLine" as delimited
+
+Problem:
+	whenever we use nextLine() after any other next methods,
+	we capture their enter key
+
+Solution 1:
+	check if nextLine() captures blank
+
+Scanner sc=new Scanner(System.in);
+		int id=sc.nextInt();
+		String name=sc.nextLine();
+		if(name.equals(""))
+			name=sc.nextLine();
+		float marks=sc.nextFloat();
+		
+		System.out.println(id);
+		System.out.println(name);
+		System.out.println(marks);
+		
+
+
+Solution 2:
+	use a separate Scanner object for nextLine() alone
+
+import java.util.Scanner;
+
+public class ScannerDemo1 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Scanner sc2=new Scanner(System.in);
+		int id=sc.nextInt();
+		String name=sc2.nextLine();
+//		if(name.equals(""))
+//			name=sc.nextLine();
+		float marks=sc.nextFloat();
+		
+		System.out.println(id);
+		System.out.println(name);
+		System.out.println(marks);
+		
+	}
+
+}
+
+
+
+TasK:
+---------
+Identify as many methods of Scanner class and their use.
+
+nextInt
+nextFloat
+nextLong
+nextBoolean
+nextLine		for String	(new line delimiter)		multiple words with space can be input
+next		only one word
+nextLong
+nextShort
+nextByte
+hasNext
+match
+
+Task:
+write a java program to get one character as input and check if it is a vowel or not.
+output should be either
+	Vowel
+	Not Vowel
+
+
+
+import java.util.Scanner;
+
+public class MainChar {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+//		char c=sc.next().charAt(0);
+		char c='\0';
+		String input=sc.next();
+		c=input.toLowerCase().charAt(0);
+//		System.out.println(c);
+		switch(c)
+		{
+		case 'a':
+		case 'e':
+		case 'i':
+		case 'o':
+		case 'u':
+			System.out.println(input+" is Vowel");
+			break;
+		default:
+			System.out.println(input+"is not vowel");
+			break;
+		}
+//		System.out.println(input);
+	}
+
+}
+
+
+
+why dont we use if-else, instead of switch case
+whenever, i use lot of == conditions, i check if switch case can be used
+
+
+if(c=='a' || c=='e' || c=='i'
+
+
+
+--------------------------------------------
+String Handling 
+----------------------
+String 
+StringBuilder
+StringBuffer
+
+Predict the output:
+
+String str1="hello";
+String str2="hello";
+
+System.out.println(str1==str2);	//output is:
+
+
+== operator
+	checks if the operands are equal or not
+	checks if their references are equal or not 	(when the operands are reference types)
+	checks if their values are equal or not	(when the operands are value types)
+
+what are value types?
+	only primitives are value types.
+
+int i=20;
+int j=30;
+
+i==j		their values are compared
+
+String is a reference type.
+
+String str1="hello";
+String str2="hello";
+String str3=str1;
+
+str1==str2
+	their reference are compared
+
+
+
+String str1=new String("hello");
+String str2=new String("hello");
+
+==	references are different. so we get false
+equals	method in String class, is defined to compare the values, so we get 	true
+
+
+equals method of Object class is overridden by the String class 
+
+
+
+==
+	check if you are comparing primitives or object?
+
+.equals
+
+str.equals
+
+
+We will continue learning string related operations
+
+
+Employee e1=....
+Employee e2=....
+
+e1=e2;		the reference of e2 is copied to e1. So both are same reference
+
+if(e1.equals(e2))		the Employee class must override the equals method
+
+e1==e2			references
+
+
+int i=20;
+int j=30;
+
+if(i.equals(j))			//there is no way we have methods in primitives
+
+if(i==j)	this is correct
+
+
+-----------------------------------------------------------
+==
+	is used to compare primitives (value types)
+	check their values
+
+
+non-primitives	means 	objects	(reference types)
+==	compares the references
+equals	to compare the values
+
+str1
+str2
+
+	equals method to compare strings
+
+
+String class methods:
+--------------------------------
+equals()
+equalsIgnoreCase()
+toCharArray()
+charAt()
+substring
+indexOf
+contains
+toUpperCase
+toLowerCase
+valueOf
+matches
+
+Task:
+-------
+Accept a string input from the user and display only the vowels
+
+input:
+	education
+output:
+	euaio
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class StringVowel {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String input=sc.nextLine();
+		
+		//how to access every character in a String?
+		//1) charAt(index) start from index 0 to length -1
+		//2) toCharArray() and then loop every char
+		
+		for(int i=0;i<input.length();i++)
+		{
+			switch(input.toLowerCase().charAt(i))
+			{
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+				System.out.print(input.charAt(i));	
+				break;
+			}			
+		}
+	}
+
+}
+
+
+
+
+
+		char[] arr = input.toCharArray();
+		for(int i=0;i<arr.length;i++)
+		{
+			switch(arr[i])
+			{
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+				System.out.print(arr[i]);	
+				break;
+			}
+		}
+
+
+
+
+--------------------------------------------
+import java.util.Scanner;
+
+public class StringVowel {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String input=sc.nextLine();
+		
+		//how to access every character in a String?
+		//1) charAt(index) start from index 0 to length -1
+		//2) toCharArray() and then loop every char
+		
+//		char[] arr = input.toCharArray();
+		for(char c : input.toCharArray())
+		{
+			switch(c)
+			{
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+				System.out.print(c);	
+				break;
+			}
+		}
+	}
+}
+
+
+
+
+-----------------------------------------------------------------------------
+Task:
+----------
+Accept a string input and check if it is a Palindrome or not.
+
+ex for palindrome
+
+MALAYALAM
+	if you read it forward or backward, it is same.
+
+
+whoever has completed, could you please tell me the algorithm used to solve this problem?
+
+
+algorithm:
+	compare the characters at index
+	0 and len-1	-0
+	1 and len-1-1
+	2 and len-1-2
+
+	
+import java.util.Scanner;
+
+public class MainPalindrome {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String input=sc.next();
+		boolean flag=true;
+		
+		int lastIndex=input.length()-1;
+		
+		for(int i=0;i<=lastIndex/2;i++)
+		{
+			if(input.charAt(i)!=input.charAt(lastIndex-i))
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag)
+			System.out.println("Palindrome");
+		else
+			System.out.println("Not Palindrome");
+	}
+
+}
+
+
+------------Solution 2-----------------
+if you reverse a string?
+and if that reverse string is also same as input,
+then it is a palindrome.
+
+malayalam
+
+How to reverse a string in java?
+
+String class do not have such method
+
+
+import java.util.Scanner;
+
+public class MainPalindrome2 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String input=sc.next();
+		StringBuilder sb=new StringBuilder(input);
+		sb.reverse();
+		String reverse=sb.toString();
+		if(input.equals(reverse))
+			System.out.println("Palindrome");
+		else
+			System.out.println("Not Palindrome");		
+	}
+
+}
+
+
+
+Introducing StringBuilder
+----------------------------------
+String is immutable. Hence we need 
+	StringBuilder
+	StringBuffer
+
+immutable means?
+	cannot be changed
+	cannot be modified
+
+
+		String str="hello";
+		str="world";	//what happened here, is "str" is a ref var that points to a different location
+
+A variable should be a memory location, where the values can be changed
+
+str="hello";		points to a memory
+str="world";		points to a different memory
+str="hillo";
+
+Employee e1=new Employee();
+e2=e1;
+Employee e3=new Employee();
+e2=e3;
+
+
+String str1=new String("hello");
+str1.replace("h","t");		//this kind of updation is not allowed in string
+
+replace
+delete
+insert
+
+there is no way, a particular part of the string can be changed. If required, we replace entire string at all.
+
+
+
+If we need to edit a String, use StringBuilder / StringBuffer
+
+
+Both StringBuilder and StringBuffer 
+have same set of properties and methods
+
+only difference between these 2:
+StringBuffer is synchronized		it is slow
+StringBuilder is not sychronized		it is not thread safe
+
+What is Synchronized?
+	when multiple threads try to access one string buffer object, then they are allowed only 1 by 1.
+	No 2 threads can access string buffer at a time
+	This is called as synchronized.
+
+
+Use StringBuilder wherever possible. only when we need thread safety, then only use StringBuffer
+
+Palindrome program?
+	
+
+
+Task:
+----------
+Identify as many methods of StringBuilder
+
+
+Task
+
+Accept 2 string inputs and tell if they are anagrams
+ex:
+	tea		aet
+	eat		aet
+
+meat			aemt
+team			aemt
+
+2 strings made of same characters are anagrams
+
+assumption:
+	they are made of same set of characters
+	same number of characters
+	each of the characters appear same number of times
+
+question is not if they are proper english words or not.
+
+abcd
+bcda
+
+to sort a string 
+	we can convert string into char array
+	array can be sorted
+		Arrays.sort(arr);
+
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class AnagramDemo {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String input1=sc.next();
+		String input2=sc.next();
+		//to convert String into char arr
+		char[] arr1 = input1.toLowerCase().toCharArray();
+		char[] arr2 = input2.toLowerCase().toCharArray();
+		
+		Arrays.sort(arr1);
+		Arrays.sort(arr2);
+		
+		//to convert char arr into String
+		String str1=new String(arr1);
+		String str2=new String(arr2);
+		
+		if(str1.equalsIgnoreCase(str2))
+			System.out.println("Anagrams");
+		else
+			System.out.println("Not anagrams");
+		
+		sc.close();
+	}
+
+}
+
+
+------------------------------------
+Regular Expressions
+---------------------------
+validate a string
+	whether it is a valid email address or not?
+	it is a valid phone number or not?
+
+Regular expressions can be used
+	1) to check if a string is matching a pattern or not
+	2) to extract the portions of the string that matches a pattern
+
+
+example for regex:
+
+C\\d{3}		means the string should start with C followed by 3 digits
+
+\d means digit	{3} is the multiplicity
+
+C001		pass
+C123		pass
+C12		fail
+C1		fail
+CDEF		fail
+
+example:
+pattern:		\\d+			+ means, 1 or more		* means, 0 or more	? means 0 or 1
+this is a phone number of the university. Contact 9898989898 and if that number does not work, kindly try 3293293293.
+
+9898989898
+3293293293
+
+we have extracted the portions of the String that matches a pattern
+
+understand as many symbols used in regular expressions:
+\d		digit
+\D		non digit
+.		anything		char, number, symbol, space, anything
+
+[]		list of characters, from which 1 can be present
+		[aeiou]		either a / e/ i/ o/ u any 1 character from the list
+
+		[a-z]		one lowercase alphabet can be present
+		[A-Za-z0-9]	upper/lower case alphabet or a digit can be present
+
+multiplicity
++
+*
+?
+{x,y}
+
+
+
+Character.isDigit()
+Character.isNumber()
+
+if(c>='0' && c<='9')
+	digit
+
+if(c>='A' && c<='Z')
+	upper case alphabet
+
+if(c>='a' && c<='z')
+	lower case alphabet
+
+
+
+
+
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegExExtractNumbers {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String input=sc.nextLine();
+		Pattern p = Pattern.compile("\\d+");
+		Matcher m = p.matcher(input);
+		while(m.find())
+		{
+			System.out.println(m.group());
+		}
+		sc.close();
+	}
+
+}
+
+
+
+To use regex to validate if the given string is matching a pattern or not.
+
+The password should contain atleast 
+	1 upper case alphabet
+	1 lower case alphabet
+	1 symbol
+	1 number
+minimum 8 characters
+
+
+
+email validation
+
+[.]	dot as a character
+
+any symbol used in reg ex, if you want to check if that character is present,
+[*]	* is not a symbol here, it is a character expected
+
+
+[a-z]	
+
+[0-9]		ascii value of 0 and 9 are used to check the range
+
+[0-255]	is not possible	2, 5, 5
+
+(	)	to group a pattern, then specify that group should occur how many times
+
+([a-z]{3}[0-9]{3}){5}
+
+(	) grouping
+
+
+
+
+
+1. emailVerify(Email e):
+•	In this method you have to use regex to check if the email-address to and from in Header class is valid or not. Validation is based on:
+•	Email address should start with alphabets(capital/small) or _(underscore).
+•	Email address should have only one @ followed by alphabets.
+•	Email address should end with .(dot) followed by alphabets.
+•	e.g: amit@doselect.com, _ami@doselect.in are valid addresses, but 1ami@dos.com, amit@doselect are invalid addresses.
+•	Return 2 if the both email addresses are valid return 1 if one is valid, and 0 if both are invalid.
+
+
+([A-Za-z_]+)([@]{1})([a-z]+)([.])([a-z]+)
+
+2 parts in a reg ex:
+
+first part is pattern
+
+[a-z]
+\d
+
+second part is the multiplicity
++	one or more
+*	zero or more
+?	zero or one
+{x,y}	min x times, max y times
+{x,}	min x times, max unbounded	(any times)
+{,y}	min is not mentioned. maximum y times
+
+{x}	x times	
+
+if you do not mention multiplicity, it is considered as 1 time
+
+
+() to group
+pattern followed by multiplicity
+
+learn as many symbols possible
