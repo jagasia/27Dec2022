@@ -168,3 +168,175 @@ class Period
 5) Find the policy maturity date
 	start date + number of years
 
+----------------------------------------------------------------------------
+
+3 programming questions
+
+1) String
+2) Exception handling
+3) Collections
+
+Generics and Collections
+o	Overriding hashCode() and equals()
+o	Overriding equals()
+o	Overriding hashCode()
+o	Collections
+o	So What Do You Do with a Collection?
+o	List Interface
+o	Set Interface
+o	Map Interface
+o	Queue Interface
+o	Using the Collections Framework
+o	ArrayList Basics
+o	Autoboxing with Collections
+o	Sorting Collections and Arrays
+o	Navigating (Searching) TreeSets and TreeMaps
+o	Other Navigation Methods
+o	Backed Collections
+o	Generic Types
+o	Generics and Legacy Code
+o	Mixing Generic and Non-generic Collections
+o	Polymorphism and Generics
+
+---------------------------
+
+Arrays
+----------
+in C, C++ the arrays syntax is different
+	int arr[10];
+
+but in java, we cannot do like that:
+we need to do this in 2 steps
+	int arr[]=new int[10];
+
+we can do this in multiple steps also:
+	int arr[];		//define the type	int type	 and a single dimension array
+	arr=new int[10];	//size the array	10 int memory locations are allocated
+
+multi dimensional arrays:
+
+	int arr[][]=new int[10][];		//why 2nd dimension is blank, it can be blank or it can be mentioned
+
+if you leave the last dimension blank, then it is "Jagged" array
+Means, every row, can have different number of columns
+
+
+		int arr[][]=new int[5][];
+		arr[0]=new int[4];
+		arr[1]=new int[6];
+		arr[2]=new int[5];
+		arr[3]=new int[5];
+		arr[4]=new int[8];
+		System.out.println(Arrays.deepToString(arr));
+
+
+
+Arrays
+	what do you know about array?
+		homogenous collection. Only 1 type of data
+		if array is of Object type, it looks like anything can be added. But every element we add is autoboxed to Object type. So array has only 1 type of element in itself.
+
+User defined type array
+	Employee class
+
+
+A class name must
+	be a noun
+	start with capital letter. Every word first letter start with capital
+	meaning ful
+	entity	refers to a place or person or process 
+
+	User
+		validateLogin		doThis		verb+Noun
+
+
+
+How can you sort an array?
+	Arrays.sort(arr);
+
+What is the limitation of Array?
+	size of the array is fixed
+	
+Collections can grow or shrink (means, the size can be changed)
+Difference between arrays and collections,
+
+arrays can be primitive type also.
+	int arr[];
+
+but collections can be object type	(can be wrapper class type, or user defined type or Object type)
+primitive type collection is not possible
+
+Collections
+	List
+	Set
+	Map		(application of collection)
+
+Activity:
+	understand the difference between these collection classes:
+
+List interface 	is implemented by		allows duplicates
+	ArrayList
+	LinkedList
+
+Set interface	reject duplicates
+	HashSet
+	TreeSet
+	LinkedHashSet
+
+Map
+	HashSet
+	TreeMap
+	LinkedHashMap
+
+Set		Set is a collection of distinct elements
+	unique
+Map
+	key-value pair
+
+
+Array is fixed size and if we use only few elements, remaining spaces are un utilized
+linked list elements can be present anywhere, array elements are present in contigeous memory locations
+
+List is ordered	order is not ascending or descending order. Order means, the order in which elements are added
+Set is unordered	unordered means, every type of Set has an algorithm to decide the order of the elements
+	LinkedHashSet	stores the elements in the order	(in which they are added)
+
+
+List<Integer> is possible. But 	List<int> is not possible.
+
+Date
+String
+Employee
+
+
+jdk 1.5 generics were introduced. Before that	upto 1.4,
+
+ArrayList marks=new ArrayList();			//this means, it is Object type. It is not type safe
+ArrayList<Object> marks=new ArrayList<>();
+
+in jdk 1.5 onwards
+
+
+ArrayList<Integer> marks=new ArrayList<>();
+this will allow only Integer type elements. Type safe collections.
+
+Why it is called as Generics?
+	While creating this class, they did not create for only Object type. They have created in such a way, we can create object, we can specify any type (not only Object)
+
+ArrayList<T>
+
+
+int arr[]=new int[10];
+arr=new int[20];		// can we do this?		Yes, it is possible. But a new array is created.
+
+TasK:
+Identify the methods of ArrayList.
+
+add(element);
+add(index,element);
+indexOf(object);
+remove(object)
+remove(index)
+trimToSize
+get(index)
+contains()
