@@ -801,3 +801,21 @@ Caused by: java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
 	... 64 more
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 17:02:01.053
+!MESSAGE Preparing classpath changed notification mock-11-req-4
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 17:02:01.100
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 17:02:01.101
+!MESSAGE classpath=19 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 17:02:01.203
+!MESSAGE buffering callback sts4.classpath.iHCnzvrL mock-11-req-4 false 19
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 17:02:01.203
+!MESSAGE executing callback sts4.classpath.iHCnzvrL 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 17:02:01.279
+!MESSAGE executing callback sts4.classpath.iHCnzvrL SUCCESS [done]

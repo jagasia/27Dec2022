@@ -342,3 +342,60 @@ get(index)
 contains()
 
 
+
+public List<College> findCollege(List<College> collegeList,List<String> nameList)
+{
+	//This method accepts a list of colleges and list of names as arguments and returns a list of colleges that match with given list of names.
+}
+
+
+
+
+public List<College> findCollege(List<College> collegeList,Date startingDate)
+{
+	//This method accepts a list of colleges and starting date as arguments and returns a list of colleges that are starting on the given specified date.
+}
+
+
+public List<College> findCollege(List<College> collegeList, String location)
+{
+	
+}
+
+
+TasK
+------------
+Document: Java Mock 11
+page: 22
+
+Requirement 4:
+
+
+	public List<College> findCollege(List<College> collegeList, String location)
+	{
+		//loop the collegeList elements
+		List<College> result=new ArrayList<College>();
+		for(int i=0;i<collegeList.size();i++)
+		{
+			College college = collegeList.get(i);
+			if(college.getLocation().equals(location))
+			{
+				result.add(college);
+			}
+		}
+		return result;	
+	}
+
+
+
+to convert a String into int		Integer.parseInt(str);
+to convert a String into Integer		Integer.valueOf(str);
+
+to convert a String into Date		SimpleDateFormat		parse method
+
+
+printf("%d",x);
+
+System.out.printf("%d",x);
+System.out.format("%d",x);
+
