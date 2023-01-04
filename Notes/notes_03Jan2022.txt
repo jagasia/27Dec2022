@@ -899,3 +899,11 @@ if you do not mention multiplicity, it is considered as 1 time
 pattern followed by multiplicity
 
 learn as many symbols possible
+
+Activity:
+Identify as many symbols of regular expression to
+solve
+	email validation
+	phone number
+	pin code
+	

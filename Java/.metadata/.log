@@ -184,3 +184,220 @@ Caused by: java.lang.NullPointerException
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2023-01-03 09:26:25.721
 !MESSAGE No repository found at http://download.eclipse.org/technology/m2e/releases/.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-03 18:07:18.198
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sDlzIImr
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-03 18:07:18.200
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.sDlzIImr
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-03 18:07:18.200
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-03 18:07:18.201
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sDlzIImr => OK
+!SESSION 2023-01-04 09:01:42.855 -----------------------------------------------
+eclipse.buildId=4.3.1.201907120711-RELEASE
+java.version=1.8.0_281
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.egit.core 1 0 2023-01-04 09:01:54.416
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.jface 2 0 2023-01-04 09:01:58.328
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-01-04 09:01:58.328
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2a504ea7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@10f397d0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:13.693
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:13.694
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@6137dc84[org.springframework.tooling.boot.ls:1.9.0.201907120625(id=624)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:13.740
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-01-04 09:02:14.417
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\rjaga'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:14.513
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:22.361
+!MESSAGE Boot LS startup time from start to initialized: 8341ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:22.453
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ZyxekOvbisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:22.453
+!MESSAGE subscribing to classpath changes: sts4.classpath.ZyxekOvb isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:22.454
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:22.472
+!MESSAGE subsribers = {sts4.classpath.ZyxekOvb=Send Classpath Notifications(65)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:22.473
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:23.384
+!MESSAGE project jan03-1 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:23.385
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:23.385
+!MESSAGE Preparing classpath changed notification jan03-1
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:23.385
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ZyxekOvb => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:23.385
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:23.390
+!MESSAGE classpath=19 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:23.392
+!MESSAGE buffering callback sts4.classpath.ZyxekOvb jan03-1 false 19
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:23.404
+!MESSAGE executing callback sts4.classpath.ZyxekOvb 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:02:23.426
+!MESSAGE executing callback sts4.classpath.ZyxekOvb SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:03.177
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.ZyxekOvb
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:03.177
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.ZyxekOvb
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:03.178
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:03.178
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.ZyxekOvb => OK
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-01-04 09:13:12.438
+!MESSAGE C:\Program Files\Git\etc\.probe-14c0df4a-36c7-4d0f-9bf2-c8b2d7104d00
+!STACK 0
+java.nio.file.AccessDeniedException: C:\Program Files\Git\etc\.probe-14c0df4a-36c7-4d0f-9bf2-c8b2d7104d00
+	at sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(Unknown Source)
+	at java.nio.file.Files.newByteChannel(Unknown Source)
+	at java.nio.file.Files.createFile(Unknown Source)
+	at org.eclipse.jgit.util.FS$FileStoreAttributeCache.<init>(FS.java:234)
+	at org.eclipse.jgit.util.FS$FileStoreAttributeCache.getFsTimestampResolution(FS.java:211)
+	at org.eclipse.jgit.util.FS.getFsTimerResolution(FS.java:321)
+	at org.eclipse.jgit.internal.storage.file.FileSnapshot.<init>(FileSnapshot.java:186)
+	at org.eclipse.jgit.internal.storage.file.FileSnapshot.save(FileSnapshot.java:122)
+	at org.eclipse.jgit.storage.file.FileBasedConfig.load(FileBasedConfig.java:156)
+	at org.eclipse.jgit.internal.storage.file.FileRepository.loadSystemConfig(FileRepository.java:245)
+	at org.eclipse.jgit.internal.storage.file.FileRepository.<init>(FileRepository.java:203)
+	at org.eclipse.jgit.storage.file.FileRepositoryBuilder.build(FileRepositoryBuilder.java:88)
+	at org.eclipse.jgit.storage.file.FileRepositoryBuilder.create(FileRepositoryBuilder.java:108)
+	at org.eclipse.egit.core.RepositoryCache.lookupRepository(RepositoryCache.java:58)
+	at org.eclipse.egit.core.project.GitProjectData.map(GitProjectData.java:693)
+	at org.eclipse.egit.core.project.GitProjectData.remapAll(GitProjectData.java:651)
+	at org.eclipse.egit.core.project.GitProjectData.setRepositoryMappings(GitProjectData.java:465)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.connectProject(ConnectProviderOperation.java:153)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.execute(ConnectProviderOperation.java:111)
+	at org.eclipse.egit.core.internal.job.JobUtil$1.run(JobUtil.java:55)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 2 2 2023-01-04 09:13:17.539
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.128
+!MESSAGE Boot LS startup time from start to initialized: 1588ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.437
+!MESSAGE Boot LS startup time from start to initialized: 1897ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.454
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.XDMyHSsBisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.454
+!MESSAGE subscribing to classpath changes: sts4.classpath.XDMyHSsB isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.455
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.455
+!MESSAGE subsribers = {sts4.classpath.XDMyHSsB=Send Classpath Notifications(156)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.455
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.462
+!MESSAGE project jan04-1 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.462
+!MESSAGE project jan03-1 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.463
+!MESSAGE Preparing classpath changed notification jan04-1
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.463
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.463
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.464
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.XDMyHSsB => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.465
+!MESSAGE classpath=19 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.465
+!MESSAGE buffering callback sts4.classpath.XDMyHSsB jan04-1 false 19
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.466
+!MESSAGE Preparing classpath changed notification jan03-1
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.466
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.467
+!MESSAGE classpath=19 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.467
+!MESSAGE buffering callback sts4.classpath.XDMyHSsB jan03-1 false 19
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.467
+!MESSAGE executing callback sts4.classpath.XDMyHSsB 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-01-04 09:13:28.483
+!MESSAGE executing callback sts4.classpath.XDMyHSsB SUCCESS [done]
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2023-01-04 09:27:19.077
+!MESSAGE No repository found at http://download.eclipse.org/technology/m2e/releases/.

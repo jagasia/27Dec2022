@@ -1,0 +1,170 @@
+Topics learned so far;
+Access specifier
+Constructors
+Overloading
+static
+this
+final
+enum
+---------------------------
+we continue from:
+Exploring Java Basics
+o	The Object Class 
+o	 Wrapper Classes 
+o	 Type casting 
+o	Using Scanner Class                               
+o	 String Handling 
+o	Date and Time API 
+o	 Best Practices
+
+----------------------------------------------------------
+
+	
+in examination, some portion of the code is already given.
+mostly, all imports are done already
+But it is better to be aware of the imports to be done for any class/interface
+
+every problem statement at the last mention the time allowed	10 seconds
+
+reverse order
+	ListIterator
+		moved to last
+		empty for loop
+		previous
+
+	move using index
+	size()-1
+
+
+------------------------------------------------------------
+Date and Time API 
+----------------------------
+an user enters the date as a String input
+
+How we can represent it in variable?
+disadvantages of keeping a date in a String variable:
+	it will allow 31-Feb-2023
+	
+there are some valid date literals
+	2023-02-01	most commonly used format		HTML5 <input type="date" /> gives you 
+			mysql
+
+	01-Feb-23
+
+	08-09-2000		no clarity		
+
+While asking input, can we guide the user to enter in a particular format:
+	Enter your Date of Birth(dd/MM/yyyy):
+
+or we can provide date picker		<input type="date" />
+
+java.util.Date		Date class
+
+Date dt1=new Date();		the constructor of Date class fills current system date
+
+How to convert a String into Date?
+
+Date.parse(str);		//	yyyy/MM/dd
+
+long result = Date.parse("2023/08/01");
+		Date dt=new Date(result);
+		System.out.println(dt);
+
+suppose, if user enters date in other formats?		not any format.
+how can we convert that string into date?
+
+To simply convert String to Date and vice versa,
+we can use
+	SimpleDateFormat
+		parse		converts String to Date
+		format		converts Date to String
+
+Learn the symbols used in date format
+d		1 digit day		if you use only "d"		it will show 1 as 1 and 12 is shown as 12 only
+dd		2 digit day		1 is shown as 01
+MM		2 digit month
+MMM		3 letter month		Feb		Mar
+MMMM		full month		February
+yy
+yyyy
+EEEE		EEE		Mon	Tue
+		EEEE		full week day
+mm		minutes
+AM		AM / PM 		based on value
+
+Task:
+	Identify as many symbols in Date Format
+
+
+
+Every date is a millisecond started from 1970 Jan 1st and ticks every milliseconds
+
+1) Find the age based on date of birth and current date
+2) Find the number of months between 2 dates
+3) Find if an year is leap year or not
+4) Find when is the next friday coming
+5) Find the policy maturity date
+	start date + number of years
+
+
+1) Find the age based on date of birth and current date
+
+	
+Accept a String input from the user (date of birth)
+convert it into Date 
+
+based on today's date, find the age and display in 
+	You are 10 years, 8 months, 7 days old
+
+
+
+class Date
+{
+	day
+	month
+	year
+
+}
+
+java version upto 1.4
+there was no LocalDate
+
+long - long
+
+/1000
+/60
+/60
+/24
+/30
+months
+
+jdk 1.5
+	LocalDate
+
+Period.between(ld1, ld2)
+
+class Period
+{
+	days
+	months
+	years
+
+}
+
+2016	is not divisible by 400	but leap year
+
+
+		GregorianCalendar gc=new GregorianCalendar();		
+		System.out.println(gc.isLeapYear(2004));
+
+-128 to 127
+
+1900	1970	
+------------------------
+1) Find the age based on date of birth and current date
+2) Find the number of months between 2 dates
+3) Find if an year is leap year or not
+4) Find when is the next friday coming
+5) Find the policy maturity date
+	start date + number of years
+
