@@ -64,7 +64,13 @@ public class Main {
 			if(location.equals(""))
 				location=sc.nextLine();
 			result = cbo.findCollege(collegeList, location);
-
+			break;
+		case 4:
+				//find by name and remove
+			String name=sc.nextLine();
+			if(name.equals(""))
+				name=sc.nextLine();
+			result=cbo.removeCollegeByName(collegeList, name);
 			break;
 		}
 		

@@ -1,0 +1,327 @@
+Topics learned so far;
+Access specifier
+Constructors
+Overloading
+static
+this
+final
+enum
+---------------------------
+we continue from:
+Exploring Java Basics
+o	The Object Class 
+o	 Wrapper Classes 
+o	 Type casting 
+o	Using Scanner Class                               
+o	 String Handling 
+o	Date and Time API 
+o	 Best Practices
+
+----------------------------------------------------------
+
+Collections
+---------------
+List
+	ArrayList
+	LinkedList
+Set
+	HashSet
+	TreeSet
+	LinkedHashSet
+Map
+	HashMap
+	TreeMap
+	LinkedHashMap
+
+Iterators
+ListIterators
+
+Collections.sort
+
+Comparable and Comparator
+
+a collection has elements
+	you should be able to 
+		create an arraylist		empty arraylist
+		add an element to the collection
+		search for an element in the collection
+		remove an element from the collection
+	
+
+	
+
+	public List<College> removeCollegeByName(List<College> collegeList, String name)
+	{
+		return null;	//incomplete
+	}
+
+
+
+
+whenever you want to loop a collection and affect the size of collection	
+	use iterators
+		hasNext()
+		next()
+		remove()
+
+Iterator<College> it=collegeList.iterator();
+while(it.hasNext())
+{
+	College c=it.next();
+	if(c.equals(name))
+	{
+		it.remove();
+		break;
+	}
+}
+
+
+
+
+4
+IIT Madras,www.iitm.ac.in/,9876543210,Govt of India,15,Chennai,30-05-2018
+IIT Bombay,www.iitb.ac.in/,9876543211,Govt of India,16,Mumbai,20-05-2018
+IIT kharagpur,www.iitkgp.ac.in/,9876543212,Govt of India,20,Kharagpur,21-05-2018
+IIT Delhi,www.iitd.ac.in/,9876543213,Govt of India,14,Delhi,15-05-2018
+4
+IIT Delhi
+
+
+
+approach1:
+
+for(College c:collegeList)
+{
+	if(c.getName.equals(name))
+	{
+		collegeList.remove(c);		//ConcurrentModificationException
+		break;
+	}
+}
+
+
+approach2:
+
+for(int i=0;i<collegeList.size();i++
+{	
+	if(collegeList.get(i).getName().equals(name))
+	{
+		collegeList.remove(i);
+		break;
+	}
+}
+
+approach3:
+
+public List<College> removeCollegeByName(List<College> collegeList,String name)
+	{
+		Iterator<College> it = collegeList.iterator();
+		while(it.hasNext())
+		{
+			College c = it.next();
+			if(c.getName().equals(name))
+			{
+				it.remove();
+				break;
+			}
+		}
+		return collegeList;	//incomplete
+	}
+
+
+
+You can use iterators for List and Set
+
+for Map, there is no iterator
+but we can use with some tricks
+
+
+
+
+1,12,56,32,14,55,12,24,32,12
+
+replace all 12 by 120
+
+replace method itself is there
+
+
+created another variable
+ArrayList<Integer> result=new ArrayList<>();
+
+for(Integer i : list)
+{
+	int x=i;
+	if(i==m)
+		x=n;
+	result.add(x);
+}
+
+return result;
+
+---------------------------------------
+Comparable and Comparator
+why we need these?
+
+Collections.sort(list);	//what do this method do?
+
+this method sorts a list.		only list can be sorted later	(after adding elements).
+
+Collections.sort method does not work for set or map. Works only for List
+
+
+
+hasNext()		returns true, if there is any more element to visit
+next()		returns the next element 
+remove()		removes the current element
+
+when you obtain an iterator, its position is before the first element (if any)
+
+remind me about ListIterator
+--------------------------------------
+
+ArrayList<Employee>
+
+how will you sort list of employees?
+
+
+
+
+public final class java.lang.Integer extends java.lang.Number implements java.lang.Comparable {
+
+
+
+
+Collections.sort works for only types that implements Comparable interface
+
+Otherwise, we can use comparator.	<<next discussion>>
+
+if we cannot compare 2 entities, we cannot sort them.
+
+Lets find the problem.
+
+
+
+String str1="hello";
+String str2="Hello";
+
+str1.compareTo(str2);		//	returns 	-1 or 0 or 1
+
+0 means equal
+1 means first is bigger than second
+-1 means second is bigger than first
+
+
+a-b
+
+
+str1-str2	is not correct
+str1.compareTo(str2);		correct
+
+
+e1=new Employee......
+e2
+
+
+e1.compareTo(e2);
+
+
+e1.compareTo(e2);
+
+dept,id
+dept,name
+dept,salary
+
+in excel sheet
+in sql select query
+
+state	district 	city	
+TN	
+TN
+KA
+KA
+AP
+AP
+TA
+TA
+
+
+Task:
+Student class
+	id
+	name
+	marks
+
+ArrayList of students
+
+sort them by id
+
+
+----------------------
+First we sorted by id
+Then we sorted by name
+then we sorted by dept, id
+
+But everytime, we modified the Employee class.
+
+Without modifying the Employee class, how can we sort by different fields?
+
+We need to use Comparator.
+
+can create a separate class for sort by name
+can create a separate class for sort by salary
+
+many classes and each of them defines how to sort by a field(s)
+
+----------------------------------------------
+Set
+
+Set
+	rejects duplicates
+	try to add duplicate element, it is rejected. No effect.	No error.
+	
+every type of Set have a particular order.
+
+HashSet
+	order is based on hashCode method		Object class has this method. Means, every class can 		override this method
+TreeSet
+	it is sorted		(while adding elements, the elements are placed in such a way it is sorted)
+		the elements need not be added at the end	
+LinkedHashSet			is ordered
+	order is same as in which they are added
+
+
+unordered
+rejects duplicates
+
+HashSet<Employee>
+
+how will it understand the duplicates?		same id??????????	name? dept
+	where will we define that??????
+
+HashSet
+	understands duplictes and understands the order using
+		equals()
+		hashCode()
+
+
+
+e1
+e2
+
+e1.equals(e2)
+
+TreeSet
+	sorted
+	
+
+String class implements Comparable
+that is how, 
+TreeSet is able to find duplicates and also sort it
+
+str1.compareTo(str2)		returns 0 when both are equal
+
+
+how to use a comparator in
+	Collections.sort
+	TreeSet
+

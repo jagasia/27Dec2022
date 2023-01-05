@@ -1,8 +1,26 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class CollegeBO {
+	
+	public List<College> removeCollegeByName(List<College> collegeList,String name)
+	{
+		
+		Iterator<College> it = collegeList.iterator();
+		while(it.hasNext())
+		{
+			College c = it.next();
+			if(c.getName().equals(name))
+			{
+				it.remove();
+				break;
+			}
+		}
+		return collegeList;	//incomplete
+	}
+	
 	public List<College> findCollege(List<College> collegeList,List<String> nameList)
 	{
 		return null;	//incomplete
