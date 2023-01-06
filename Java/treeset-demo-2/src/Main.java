@@ -3,7 +3,7 @@ import java.util.TreeSet;
 public class Main {
 
 	public static void main(String[] args) {
-		TreeSet<Employee> empSet=new TreeSet<Employee>(new EmployeeNameComparator());
+		TreeSet<Employee> empSet=new TreeSet<Employee>((a,b)->a.getName().compareTo(b.getName()));
 //		System.out.println(0);
 		empSet.add(new Employee(12, "Raja", "ECE", 1212.0));
 //		System.out.println(1);

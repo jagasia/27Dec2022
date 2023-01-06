@@ -204,3 +204,329 @@ From the picture, find the structure of the code.
 Write the logic inside the methods
 
 
+-----------------------------------------------------
+Lambda
+Stream
+
+What is lambda?
+-----------------------
+>-
+Where is lambda used?
+	only when we want to provide implementation of a functional interface.
+
+Functional Interface:
+----------------------------
+	any interface that contains only 1 abstract method
+
+
+Interface
+
+
+class
+{
+	properties
+	methods
+}
+
+sometimes, we need to separate the implementation part and the declaration
+
+interface 
+	declaration of method
+
+class
+	provides the implementation details
+
+remember?
+	Collections.sort(list, new SalaryComparator());
+
+how was this sort method defined?
+	public static void sort(List<T> list, Comparator<T> c)
+	{
+	}
+
+
+
+Comparator<T> c=new SalaryComparator();
+
+List<Integer> marks=new ArrayList<>();		
+
+
+
+
+
+class Mobile
+{
+	public void play(Speaker s)
+	{
+		s.play();
+	}
+}
+
+
+interface Speaker
+{
+	void play();			//anything in an interface is public only
+	public static final String SPEAKER_NAME="Speaker";
+}
+
+
+class JblSpeaker implements Speaker
+{
+	public void play()
+	{
+		.....
+	}
+}
+
+class Sony implements Speaker
+{
+	public void play()
+	{
+		....
+	}
+}
+
+Mobile m=new Mobile();
+JblSpeaker j=new JblSpeaker();
+m.play(j);		///possible
+
+can an interface 
+	contain variables?
+		NO.  Interfaces can have only constants.
+		public static final (even if you do not mention also)
+
+what are all the things an interface can have?
+1) abstract methods	(but we do not mention the word abstract)	; instead of body.		no body
+2) constants
+
+upto jdk 1.7 of java, these were only allowed inside an interface.
+
+from jdk 1.8 onwards,
+interfaces can have
+3) static methods with body
+4) default methods with body
+
+an interface that contains only 1 abstract method is called as Functional Interface
+Runnable interface
+---------------------------
+	run() method
+
+Comparable
+	compareTo
+Comparator
+	compare
+
+
+	These interfaces are functional interfaces
+
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+class IntegerComparator implements Comparator<Integer>
+{
+
+	@Override
+	public int compare(Integer a, Integer b) {
+		return b-a;
+	}
+	
+}
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> marks=new ArrayList<Integer>();
+		marks.add(50);
+		marks.add(90);
+		marks.add(60);
+		marks.add(80);
+		marks.add(70);
+		marks.add(98);
+		marks.add(57);
+		marks.add(65);
+		marks.add(45);
+		
+//		Collections.sort(marks, new IntegerComparator());
+		Collections.sort(marks, (x,y)->y-x);
+		
+		for(Integer m:marks)
+			System.out.println(m);
+	}
+
+}
+
+
+
+--------------------------------------------
+SAM
+	Single Abstract Method	(Functional Interface)
+
+Stream API:
+----------------
+	to work on collections
+	read only purpose		not going to affect the collection
+
+	in RDBMS
+		SELECT query
+
+	uppercase
+	filter
+	sort
+
+	all to show you the data
+	select will never affect the data
+
+
+1) Terminal Operation
+	collectors
+	for each
+2) Intermediate Operation
+	filtering
+	sorting
+	grouping
+
+
+
+Task:
+
+ArrayList<Integer> marks=new ArrayList<Integer>();
+		marks.add(60);
+		marks.add(40);
+		marks.add(50);
+		marks.add(70);
+		marks.add(65);
+		marks.add(80);
+		marks.add(70);
+		marks.add(40);
+		marks.add(50);
+		marks.add(60);
+
+use 
+filter
+sorted
+distinct
+
+terminal operations
+	forEach
+	collect
+
+
+
+
+public class Employee{
+	Integer id;
+	String name;
+	String department;
+	Double salary;
+	
+	public Employee() {}
+
+	public Employee(Integer id, String name, String department, Double salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.department = department;
+		this.salary = salary;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public Double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(Double salary) {
+		this.salary = salary;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", department=" + department + ", salary=" + salary + "]";
+	}
+
+}
+
+
+
+Task:
+
+		ArrayList<Employee> empList=new ArrayList<Employee>();
+		empList.add(new Employee(112, "Raja", "ECE", 121212.0));
+		empList.add(new Employee(5, "Abdul", "EEE", 521212.0));
+		empList.add(new Employee(11, "Zaheer", "ECE", 421212.0));
+		empList.add(new Employee(8, "Babu", "EEE", 721212.0));
+		empList.add(new Employee(18, "Ganesh", "EEE", 621212.0));
+		empList.add(new Employee(10, "Kumar", "ECE", 321212.0));
+
+
+Display the employees based on id	desc order
+
+
+
+Demo:
+How to display the sum of salary, department wise?
+
+if you don't use Stream api
+
+Map<String, Double> result=new HashMap<>();
+
+if department is already found in the map,
+get the sum
+	sum+=salary
+
+if not
+
+summing group is fine
+average????????
+
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+
+public class Main4 {
+
+	public static void main(String[] args) {
+		ArrayList<Employee> empList=new ArrayList<Employee>();
+		empList.add(new Employee(112, "Raja", "ECE", 120.0));
+		empList.add(new Employee(5, "Abdul", "EEE", 100.0));
+		empList.add(new Employee(11, "Zaheer", "ECE", 120.0));
+		empList.add(new Employee(8, "Babu", "EEE", 100.0));
+		empList.add(new Employee(18, "Ganesh", "EEE", 120.0));
+		empList.add(new Employee(10, "Kumar", "ECE", 100.0));
+		
+//		Map<String, Double> result = empList.stream()
+//		.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.summingDouble(Employee::getSalary)));
+
+		Map<String, Double> result = empList.stream()
+		.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.averagingDouble(Employee::getSalary)));
+		
+		for(Entry<String, Double> e:result.entrySet())
+			System.out.println(e);
+	}
+
+}
