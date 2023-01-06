@@ -324,4 +324,42 @@ str1.compareTo(str2)		returns 0 when both are equal
 how to use a comparator in
 	Collections.sort
 	TreeSet
+LinkedHashSet
+	public ArrayList<Integer> removeDuplicates(ArrayList<Integer> input)
+	{
+		//write the code here
+		//convert the list into HashSet		you  will loose order. TreeSet, will sort it.
+		LinkedHashSet<Integer> temp=new LinkedHashSet<>(input);		
+		ArrayList<Integer> result=new ArrayList<>(temp);
+		return result;			
+	}
 
+manually:
+	
+		ArrayList<Integer> result=new ArrayList<>();
+		//add all the input elements (conditionally)
+		for(Integer i : input)
+		{
+			if(result.contains(i))
+				continue;
+			result.add(i);
+		}
+
+-------------------------------------------------------
+Task:
+
+Create Student class
+	id
+	name
+	marks
+
+Create A HashSet<Student>
+	and ensure that set does not allow 2 students with same id
+
+
+
+
+TreeSet<Student>
+	ensure that the elements are sorted based on id
+
+	hint:	Comparable interface implemented by Student class

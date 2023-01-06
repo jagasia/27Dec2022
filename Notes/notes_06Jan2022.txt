@@ -1,0 +1,206 @@
+Yesterday we learned
+List
+Set
+------------------------------------------------
+Today we start 
+Map
+	what do you know about Map?
+		key-value pair	(entry)
+
+This Map, is not a collection but it is an application of collection	List, Set
+we can look at map as a set of "Entries"
+
+Entry is key-value pair
+
+in list/ set, we add elements,
+in map, we add entries
+
+in java.util.Map. Entry
+
+class Entry
+{
+	K key
+	V value
+	//getters and setters	
+	//toString
+}
+
+K, V are types chosen by the user
+
+
+entry.getKey()
+entry.getValue()
+
+Map do not have add() method.
+we use put() method to add entries to the map
+
+put()
+get()
+
+what is the purpose of put method?
+	map.put(key,value);		// adds a new entry to the map
+
+is it always, new entry????????
+
+key
+	can be HashSet or TreeSet or LinkedHashSet
+
+HashMap
+	key is HashSet
+TreeMap
+	key is TreeSet
+LinkedHashMap
+	key is LinkedHashSet
+
+that means,
+
+key is a set
+	must be unique/ distinct
+
+How map behaves, when we put duplicate key?
+	it will update the value			
+
+Demo:
+Create a hashmap
+	key is an integer
+	value be a String type
+
+map of countries
+
+Learn to iterate the map
+	Map do not have iterator
+	
+methods to visit all the entries of map:
+1) for each loop
+		for(Entry<Integer, String> entry:countryMap.entrySet())
+		{
+			System.out.println(entry.getKey()+"\t"+entry.getValue());
+		}
+2) iterator from the keys
+		Set<Integer> keys = countryMap.keySet();
+		for(Integer key:keys)
+			System.out.println(key+"\t"+countryMap.get(key));
+
+(or)
+		Set<Integer> keys = countryMap.keySet();
+		Iterator<Integer> it = keys.iterator();
+		while(it.hasNext())
+		{
+			Integer key = it.next();
+			System.out.println(key+"\t"+countryMap.get(key));
+		}
+
+
+TasK:
+
+Create a tree map of countries
+
+Integer, String
+
+try to add entries with same key and observe if their values are updated.
+
+
+TasK:
+--------
+Accept a sentence as input from the user.
+Display each character and their number of occurrence of that character.
+
+Sample input:
+this sentence is typed by the user
+
+Sample output:
+t	4
+h	2
+i	2
+s	4
+ 	6
+e	6
+n	2
+c	1
+y	2
+p	1
+b	1
+
+
+Hint:
+	use a type of Map, 
+	what type of map?
+		LinkedHashMap
+
+
+in a map,
+if we put the same key again, then its value gets replaced / updated
+
+first check if key already exists in the result map?
+	if yes, get the count.
+	increment the count by 1
+	put the same key, count
+
+if key is not found,
+	we are adding a new entry
+	in that case, the count is 1
+
+get count, increment by 1
+count is 0, increment by 1
+
+
+
+
+
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+public class Task1CountCharacters {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String input=sc.nextLine();
+	
+		LinkedHashMap<Character, Integer> result=new LinkedHashMap<>();
+		
+		//logic here
+		char[] arr=input.toCharArray();
+		for(char c:arr)
+		{
+			int count=0;
+			if(result.containsKey(c))
+			{
+				count=result.get(c);
+			}
+			count++;
+			result.put(c, count);
+		}
+		
+		for(Entry<Character, Integer> e:result.entrySet())
+			System.out.println(e.getKey()+"\t"+e.getValue());
+	}
+
+}
+
+
+HashMap<String,ArrayList<String>> mobiles=new HashMap<String,ArrayList<String>>();
+
+entries:
+
+Samsung		S2, S3, S4
+Apple		I10, I11, I12
+Redmi		K20, K20 pro, K30
+OnePlus		x,y,z
+
+brand, models
+
+addMobile("Redmi","K30");
+
+value  is an arraylist
+get the value
+value.add(model);
+
+
+HashMap<String, ArrayList<String>> mobiles = new HashMap<>()
+
+Task:
+From the picture, find the structure of the code.
+Write the logic inside the methods
+
+
